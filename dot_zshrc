@@ -141,6 +141,9 @@ alias whr='wormhole receive'
 alias whs='wormhole send'
 alias wht='wormhole send --text'
 
+# chezmoi aliases
+alias cm="chezmoi"
+
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
