@@ -64,6 +64,14 @@ path=(~/bin $path)
 # Add JetBrains Toolbox to path
 path+=(~/Library/Application Support/JetBrains/Toolbox/scripts)
 
+if [[ -x /opt/homebrew/bin/micro ]]; then
+  export VISUAL=/opt/homebrew/bin/micro
+else
+  export VISUAL=${${commands[nano]:t}:-vi}
+fi
+
+export EDITOR=$VISUAL
+
 # Soure GCP
 z4h source "$HOMEBREW_PREFIX/share/google-cloud-sdk/path.zsh.inc"
 z4h source "$HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc"
