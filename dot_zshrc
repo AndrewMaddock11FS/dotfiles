@@ -109,6 +109,9 @@ z4h load   ohmyzsh/ohmyzsh/plugins/git
 z4h load   ohmyzsh/ohmyzsh/plugins/brew
 z4h source $HOMEBREW_PREFIX/share/zsh-you-should-use/you-should-use.plugin.zsh
 
+# custom zsh aliases
+z4h source ~/.zsh_aliases
+
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
 z4h bindkey redo Option+/            # redo the last undone command line change
@@ -127,38 +130,6 @@ compdef _directories md
 
 # Define named directories: ~w <=> Windows home directory on WSL.
 [[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
-
-# Define aliases.
-alias tree='tree -a -I .git'
-
-# Add flags to existing aliases.
-alias ls="${aliases[ls]:-ls} -A"
-
-# Kubeswitch alias
-alias s="switch"
-
-# aliases
-alias l="ls -l"
-alias ll="l -a"
-alias lessf="less -SM+F"
-alias wcl='wc -l'
-alias watch='watch '
-
-# jq aliases
-alias jq="jq --unbuffered"
-alias jql="jq -C . | less -SMR"
-alias jqlc="jq -Cc . | lessf -R"
-
-# gng aliases
-alias gradle=gw
-
-# magic-wormhole aliases
-alias whr='wormhole receive'
-alias whs='wormhole send'
-alias wht='wormhole send --text'
-
-# chezmoi aliases
-alias cm="chezmoi"
 
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot

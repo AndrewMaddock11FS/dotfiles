@@ -1,0 +1,134 @@
+# --------------
+# common aliases - https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/common-aliases/common-aliases.plugin.zsh
+# --------------
+
+# ls, the common ones I use a lot shortened for rapid fire usage
+alias l='ls -lFh'     #size,show type,human readable
+alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
+alias ll='ls -l'      #long list
+alias ldot='ls -ld .*'
+alias lS='ls -1FSsh'
+alias lart='ls -1Fcart'
+alias lrt='ls -1Fcrt'
+alias lsr='ls -lARFh' #Recursive list of files and directories
+alias lsn='ls -1'     #A column contains name of files and directories
+
+# Add flags to existing aliases.
+alias ls="${aliases[ls]:-ls} -A"
+
+alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
+
+alias grep='grep --color'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+
+alias lessf="less -SM+F"
+alias wcl='wc -l'
+alias watch='watch '
+
+# ---------------
+# chezmoi aliases - https://github.com/twpayne/chezmoi
+# ---------------
+alias cm="chezmoi"
+alias cmad="chezmoi add"
+alias cmdf="chezmoi diff -v"
+alias cma="chezmoi apply -v"
+alias cmcd="chezmoi cd"
+alias cmzsh="chezmoi edit ~/.zshrc"
+alias cmali="chezmoi edit ~/.zsh_aliases"
+alias cmtmux="chezmoi edit ~/.tmux.con"
+alias cmlg="lazygit -p ~/.local/share/chezmoi"
+
+# ------------
+# docker alias - https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/docker/docker.plugin.zsh
+# ------------
+alias dirm='docker image rm'
+alias dit='docker image tag'
+alias dlo='docker container logs'
+alias dnc='docker network create'
+alias dncn='docker network connect'
+alias dndcn='docker network disconnect'
+alias dni='docker network inspect'
+alias dnls='docker network ls'
+alias dnrm='docker network rm'
+alias dpo='docker container port'
+alias dpu='docker pull'
+alias dr='docker container run'
+alias drit='docker container run -it'
+alias drm='docker container rm'
+alias 'drm!'='docker container rm -f'
+alias dst='docker container start'
+alias drs='docker container restart'
+alias dsta='docker stop $(docker ps -q)'
+alias dstp='docker container stop'
+alias dtop='docker top'
+alias dvi='docker volume inspect'
+alias dvls='docker volume ls'
+alias dvprune='docker volume prune'
+alias dxc='docker container exec'
+alias dxcit='docker container exec -it'
+
+# ------------
+# gng (gradle) alias - https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/helm/helm.plugin.zsh
+# ------------
+alias gradle=gw
+alias gwdr='gw --dry-run'
+alias gwdep='gw dependencies'
+alias gwtsk='gw tasks'
+alias gwc='gw clean'
+alias gwca='gw clean assemble'
+alias gwcb='gw clean build'
+alias gwcck='gw clean check'
+alias gwa='gw assemble'
+alias gwb='gw build'
+alias gwck='gw check'
+
+# ----------
+# helm alias - https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/helm/helm.plugin.zsh
+# ----------
+alias h='helm'
+alias hin='helm install'
+alias hun='helm uninstall'
+alias hse='helm search'
+alias hup='helm upgrade'
+
+# ----------
+# jq aliases - https://github.com/jqlang/jq
+# ----------
+alias jq="jq --unbuffered"
+alias jql="jq -C . | less -SMR"
+alias jqlc="jq -Cc . | lessf -R"
+
+# ---------------
+# lazygit aliases - https://github.com/jesseduffield/lazygit
+# ---------------
+alias lg='lazygit'
+
+# ----------------------
+# magic-wormhole aliases - https://github.com/magic-wormhole/magic-wormhole
+# ----------------------
+alias whr='wormhole receive'
+alias whs='wormhole send'
+alias wht='wormhole send --text'
+
+# ----------------
+# Kubeswitch alias - https://github.com/danielfoehrKn/kubeswitch
+# ----------------
+alias s="switch"
+
+# ---------------
+# terraform alias - https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/terraform/terraform.plugin.zsh
+# ---------------
+alias tf='terraform'
+alias tfa='terraform apply'
+alias tfc='terraform console'
+alias tfd='terraform destroy'
+alias tff='terraform fmt'
+alias tfi='terraform init'
+alias tfo='terraform output'
+alias tfp='terraform plan'
+alias tfv='terraform validate'
+alias tfs='terraform state'
+alias tft='terraform test'
+alias tfsh='terraform show'
