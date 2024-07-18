@@ -1,0 +1,69 @@
+{
+  "logback": {
+    "title": "Logstash JSON log format",
+    "description": "Log format used by spring-boot",
+    "url": "https://github.com/logstash/logstash-logback-encoder",
+    "json": true,
+    "hide-extra": true,
+    "multiline": false,
+    "module-field": "appname",
+    "line-format": [
+      {
+        "field": "@timestamp",
+        "min-width": 29
+      },
+      " ",
+      {
+        "field": "level",
+        "min-width": 5
+      },
+      " ",
+      {
+        "field": "logger_name",
+        "max-width": 40,
+        "min-width": 40
+      },
+      " --- ",
+      {
+        "field": "message"
+      },
+      " ",
+      {
+        "field": "stack_trace",
+        "default-value": ""
+      }
+    ],
+    "timestamp-field": "@timestamp",
+    "body-field": "message",
+    "level-field": "level",
+    "level": {
+      "trace": "TRACE",
+      "debug": "DEBUG",
+      "info": "INFO",
+      "error": "ERROR",
+      "warning": "WARN"
+    },
+    "opid-field": "traceId",
+    "value": {
+      "@version": {
+        "kind": "string",
+        "hidden": true
+      },
+      "logger_name": {
+        "kind": "string",
+        "identifier": true
+      },
+      "thread_name": {
+        "kind": "string",
+        "hidden": true
+      },
+      "level_value": {
+        "kind": "integer",
+        "hidden": true
+      },
+      "stack_trace": {
+        "kind": "string"
+      }
+    }
+  }
+}
