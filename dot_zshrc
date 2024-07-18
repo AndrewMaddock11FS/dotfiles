@@ -107,6 +107,7 @@ z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
 # zsh plugin
 z4h load   ohmyzsh/ohmyzsh/plugins/git
 z4h load   ohmyzsh/ohmyzsh/plugins/brew
+z4h load   ohmyzsh/ohmyzsh/plugins/kubectl
 z4h source $HOMEBREW_PREFIX/share/zsh-you-should-use/you-should-use.plugin.zsh
 
 # custom zsh aliases
