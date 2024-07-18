@@ -1,3 +1,8 @@
+# -----------
+# bat aliases - https://github.com/sharkdp/bat
+# -----------
+alias cat='bat --paging=never --style=plain'
+
 # --------------
 # common aliases - https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/common-aliases/common-aliases.plugin.zsh
 # --------------
@@ -37,7 +42,7 @@ alias cma="chezmoi apply -v"
 alias cmcd="chezmoi cd"
 alias cmzsh="chezmoi edit ~/.zshrc"
 alias cmali="chezmoi edit ~/.zsh_aliases"
-alias cmtmux="chezmoi edit ~/.tmux.con"
+alias cmtmux="chezmoi edit ~/.tmux.conf"
 alias cmlg="lazygit -p ~/.local/share/chezmoi"
 
 # ------------
