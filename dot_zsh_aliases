@@ -23,7 +23,8 @@ alias lsn='ls -1'     #A column contains name of files and directories
 # Add flags to existing aliases.
 alias ls="${aliases[ls]:-ls} -A"
 
-alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
+alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' 			# Quick access to the .zshrc file
+alias zshalias='${=EDITOR} ${ZDOTDIR:-$HOME}/.zsh_aliases'	# Quick access to the .zsh_aliases file
 
 alias grep='grep --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
@@ -88,6 +89,7 @@ alias gwcck='gw clean check'
 alias gwa='gw assemble'
 alias gwb='gw build'
 alias gwck='gw check'
+alais gwkl='gw koverLog'
 
 # ----------
 # helm alias - https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/helm/helm.plugin.zsh
@@ -137,3 +139,8 @@ alias tfv='terraform validate'
 alias tfs='terraform state'
 alias tft='terraform test'
 alias tfsh='terraform show'
+
+# ----------------
+# Ktlint alias - https://pinterest.github.io/ktlint
+# ----------------
+alias ktlf="ktlint --format"
