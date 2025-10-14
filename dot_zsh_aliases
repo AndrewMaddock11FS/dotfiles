@@ -76,7 +76,7 @@ alias dxc='docker container exec'
 alias dxcit='docker container exec -it'
 
 # ------------
-# gng (gradle) alias - https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/helm/helm.plugin.zsh
+# gng (gradle) alias - https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/gradle/gradle.plugin.zsh
 # ------------
 alias gradle=gw
 alias gwdr='gw --dry-run'
@@ -89,7 +89,21 @@ alias gwcck='gw clean check'
 alias gwa='gw assemble'
 alias gwb='gw build'
 alias gwck='gw check'
-alais gwkl='gw koverLog'
+alias gwkl='gw koverLog'
+
+function gwall() {
+  for f in **/gradlew
+    do
+      (
+        cd $(dirname $f)
+        gw "${@}" || exit $?
+        echo Done $f
+      ) || {
+        echo "$f failed" >&2
+        break
+      }
+    done
+}
 
 # ----------
 # helm alias - https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/helm/helm.plugin.zsh
