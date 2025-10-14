@@ -1,4 +1,5 @@
 {
+  "$schema": "https://lnav.org/schemas/format-v1.schema.json",
   "logback": {
     "title": "Logstash JSON log format",
     "description": "Log format used by spring-boot",
